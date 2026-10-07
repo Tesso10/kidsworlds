@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kids World | Big Style for Little Stars — Atlanta Children's Clothing</title>
+<meta name="description" content="Kids World and A to Z Kids: children's clothing, baby essentials, school uniforms and accessories. Six store locations across metro Atlanta.">
+<meta name="theme-color" content="#1F4FD8">
+<meta property="og:title" content="Kids World — Big Style for Little Stars">
+<meta property="og:description" content="Children's clothing, baby essentials, school uniforms and more. Visit a Kids World store in metro Atlanta.">
+<meta property="og:image" content="images/storefront.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#1F4FD8; --blue-deep:#163BA8; --pink:#FF3E9A; --pink-soft:#FFE3F0;
+  --navy:#0E1A3D; --yellow:#FFC93C; --sky:#EAF0FF; --white:#fff;
+  --ink:#1B2240; --muted:#5A6386; --line:#E3E8F5;
+  --r-lg:28px; --r-md:20px; --r-sm:14px;
+  --shadow:0 10px 30px rgba(14,26,61,.10);
+  --shadow-lift:0 18px 40px rgba(14,26,61,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:'Nunito',system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:'Fredoka',sans-serif;line-height:1.1;color:var(--navy)}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 18px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:0 28px;border-radius:999px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.08rem;text-decoration:none;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:active{transform:scale(.97)}
+.btn-pink{background:var(--pink);color:#fff;box-shadow:0 8px 20px rgba(255,62,154,.35)}
+.btn-pink:hover{background:#ee2c88}
+.btn-blue{background:var(--blue);color:#fff;box-shadow:0 8px 20px rgba(31,79,216,.30)}
+.btn-blue:hover{background:var(--blue-deep)}
+.btn-white{background:#fff;color:var(--blue)}
+.btn-outline{background:transparent;color:#fff;border:2.5px solid rgba(255,255,255,.85)}
+.btn-yellow{background:var(--yellow);color:var(--navy)}
+.btn-sm{min-height:44px;padding:0 18px;font-size:.95rem}
+
+/* ---------- Top bar ---------- */
+.topbar{background:var(--navy);color:#fff;text-align:center;font-weight:700;font-size:.88rem;padding:9px 14px}
+.topbar span{color:var(--yellow)}
+
+/* ---------- Header ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-row{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-mark{width:42px;height:42px;border-radius:13px;background:var(--blue);display:grid;place-items:center;box-shadow:0 6px 14px rgba(31,79,216,.35)}
+.logo-text{font-family:'Fredoka',sans-serif;font-weight:700;font-size:1.45rem;line-height:1;color:var(--blue)}
+.logo-text b{color:var(--pink);font-weight:700}
+.logo-text .ball{width:.78em;height:.78em;display:inline-block;vertical-align:-.06em;margin:0 .02em}
+.logo-sub{display:block;font-family:'Nunito';font-size:.66rem;font-weight:800;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-top:3px}
+.menu-btn{width:48px;height:48px;border-radius:14px;border:none;background:var(--sky);display:grid;place-items:center;cursor:pointer}
+.menu-btn span{display:block;width:22px;height:2.5px;background:var(--navy);border-radius:2px;position:relative;transition:.2s}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:22px;height:2.5px;background:var(--navy);border-radius:2px;transition:.2s}
+.menu-btn span::before{top:-7px}.menu-btn span::after{top:7px}
+.menu-open .menu-btn span{background:transparent}
+.menu-open .menu-btn span::before{top:0;transform:rotate(45deg)}
+.menu-open .menu-btn span::after{top:0;transform:rotate(-45deg)}
+nav.main{position:fixed;inset:68px 0 auto 0;background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow);max-height:0;overflow:hidden;transition:max-height .3s ease}
+.menu-open nav.main{max-height:80vh;overflow:auto}
+nav.main ul{list-style:none;padding:8px 18px 18px}
+nav.main a{display:block;padding:14px 6px;font-weight:800;font-size:1.05rem;text-decoration:none;border-bottom:1px solid var(--line);color:var(--navy)}
+nav.main a.hl{color:var(--pink)}
+nav.main a.club{color:var(--blue)}
+
+@media (min-width:1080px){
+  .menu-btn{display:none}
+  nav.main{position:static;max-height:none;overflow:visible;box-shadow:none;border:none;background:transparent}
+  nav.main ul{display:flex;gap:2px;padding:0}
+  nav.main a{border:none;padding:8px 10px;font-size:.92rem;border-radius:10px}
+  nav.main a:hover{background:var(--sky);color:var(--blue)}
+}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(150deg,var(--blue) 0%,#2E5FE8 55%,#4B3FD6 100%);color:#fff;padding:46px 0 64px}
+.hero::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:var(--pink);opacity:.22;top:-160px;right:-140px}
+.hero::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:var(--yellow);opacity:.16;bottom:-120px;left:-80px}
+.hero-grid{position:relative;z-index:2;display:grid;gap:34px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:7px 15px;border-radius:999px;font-weight:800;font-size:.82rem;letter-spacing:.04em}
+.hero h1{color:#fff;font-size:clamp(2.6rem,10vw,4.6rem);margin:18px 0 16px;font-weight:700}
+.hero h1 em{font-style:normal;color:var(--yellow)}
+.hero p.lead{font-size:1.14rem;max-width:520px;opacity:.95}
+.hero-ctas{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.hero-visual{position:relative}
+.hero-photo{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#ffffff22,#ffffff0a);border:3px solid rgba(255,255,255,.35);box-shadow:0 24px 50px rgba(0,0,0,.25)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;position:relative;z-index:2}
+.hero-photo .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px}
+.hero-photo .ph strong{font-family:'Fredoka';font-size:2.2rem;display:block}
+.hero-photo .ph small{opacity:.8;font-weight:700}
+.badge-float{position:absolute;z-index:3;background:#fff;color:var(--navy);border-radius:18px;padding:12px 16px;box-shadow:var(--shadow-lift);font-weight:800;font-size:.9rem;display:flex;align-items:center;gap:10px}
+.badge-float .dot{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;flex-shrink:0}
+.bf-1{left:-6px;bottom:-18px}.bf-1 .dot{background:var(--yellow)}
+.bf-2{right:-6px;top:-16px}.bf-2 .dot{background:var(--pink-soft)}
+@media (min-width:640px){.hero-ctas{flex-direction:row}}
+@media (min-width:900px){.hero{padding:80px 0 96px}.hero-grid{grid-template-columns:1.05fr 1fr}}
+
+/* ---------- Sections ---------- */
+section{padding:64px 0}
+.eyebrow{display:inline-block;font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:10px}
+.sec-head{text-align:center;max-width:620px;margin:0 auto 36px}
+.sec-head h2{font-size:clamp(2rem,6.5vw,2.8rem)}
+.sec-head p{color:var(--muted);margin-top:12px;font-size:1.06rem}
+
+/* ---------- Categories ---------- */
+.cats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cat{position:relative;border-radius:var(--r-md);overflow:hidden;text-decoration:none;background:#fff;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.cat:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+.cat-media{position:relative;aspect-ratio:1/1;display:grid;place-items:center}
+.cat-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cat-media svg{width:46%;height:46%}
+.cat-body{padding:14px 14px 18px}
+.cat-body h3{font-size:1.25rem;display:flex;justify-content:space-between;align-items:center}
+.cat-body h3 .arr{width:30px;height:30px;border-radius:50%;background:var(--sky);display:grid;place-items:center;flex-shrink:0;transition:background .2s}
+.cat:hover .arr{background:var(--pink)}
+.cat:hover .arr path{stroke:#fff}
+.cat-body p{color:var(--muted);font-size:.9rem;margin-top:5px;line-height:1.45}
+.c-girls .cat-media{background:linear-gradient(140deg,#FF6FB1,#FF3E9A)}
+.c-boys .cat-media{background:linear-gradient(140deg,#4F7BFF,#1F4FD8)}
+.c-baby .cat-media{background:linear-gradient(140deg,#FFE48A,#FFC93C)}
+.c-school .cat-media{background:linear-gradient(140deg,#2A3A78,#0E1A3D)}
+.c-acc .cat-media{background:linear-gradient(140deg,#B89BFF,#7A5CF0)}
+.c-school{grid-column:span 2}
+.c-school .cat-media{aspect-ratio:2.1/1}
+.c-school .cat-media svg{width:26%;height:60%}
+@media (min-width:720px){
+  .cats{grid-template-columns:repeat(3,1fr)}
+  .c-school{grid-column:span 1}.c-school .cat-media{aspect-ratio:1/1}.c-school .cat-media svg{width:46%;height:46%}
+}
+@media (min-width:1080px){.cats{grid-template-columns:repeat(5,1fr)}}
+
+/* ---------- Promo banner ---------- */
+.promo{background:var(--navy);color:#fff;border-radius:var(--r-lg);padding:40px 26px;position:relative;overflow:hidden;display:grid;gap:26px;align-items:center}
+.promo::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:var(--blue);opacity:.45;right:-120px;bottom:-140px}
+.promo > *{position:relative;z-index:2}
+.sale-tag{display:inline-block;background:var(--yellow);color:var(--navy);font-family:'Fredoka';font-weight:700;padding:6px 16px;border-radius:10px;transform:rotate(-3deg);font-size:1rem;margin-bottom:14px}
+.promo h2{color:#fff;font-size:clamp(2rem,6.5vw,2.8rem)}
+.promo p{opacity:.88;margin:12px 0 24px;font-size:1.06rem;max-width:520px}
+.promo-chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:9px 16px;font-weight:700;font-size:.9rem}
+.chip.y{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+@media (min-width:900px){.promo{grid-template-columns:1.3fr 1fr;padding:56px 52px}}
+
+/* ---------- Duo cards (availability + club) ---------- */
+.duo{display:grid;gap:18px}
+.card{border-radius:var(--r-lg);padding:34px 26px;position:relative;overflow:hidden}
+.card h2{font-size:clamp(1.8rem,5.5vw,2.3rem)}
+.card p{margin:12px 0 24px;font-size:1.04rem}
+.card .ico{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;margin-bottom:18px}
+.card-avail{background:var(--sky)}
+.card-avail p{color:var(--muted)}
+.card-avail .ico{background:var(--blue)}
+.card-club{background:linear-gradient(140deg,var(--pink),#FF6A6A);color:#fff}
+.card-club h2{color:#fff}
+.card-club .ico{background:rgba(255,255,255,.22)}
+.perks{list-style:none;display:grid;gap:9px;margin:-6px 0 26px}
+.perks li{display:flex;gap:10px;align-items:center;font-weight:700}
+.perks li::before{content:"★";color:var(--yellow);font-size:1.1rem}
+@media (min-width:860px){.duo{grid-template-columns:1fr 1fr}.card{padding:46px 40px}}
+
+/* ---------- Stores ---------- */
+.stores-bg{background:linear-gradient(180deg,#F6F8FF 0%,#fff 100%)}
+.stores{display:grid;gap:16px}
+.store{background:#fff;border-radius:var(--r-md);padding:24px 22px;box-shadow:var(--shadow);border:2px solid transparent;display:flex;flex-direction:column}
+.store.feature{border-color:var(--pink)}
+.store-brand{font-weight:800;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.store-brand.az{color:#8E1F2F} /* bordeaux du sac A to Z Kids */
+.store h3{font-size:1.45rem;margin:4px 0 12px}
+.store address{font-style:normal;color:var(--muted);display:flex;gap:10px;align-items:flex-start;margin-bottom:8px}
+.store .tel{display:flex;gap:10px;align-items:center;font-weight:800;color:var(--navy);text-decoration:none;margin-bottom:16px}
+.store .row-ic{width:20px;flex-shrink:0;margin-top:3px}
+.store-note{background:var(--pink-soft);border-radius:var(--r-sm);padding:14px 16px;margin-bottom:18px;font-size:.93rem}
+.store-note strong{color:var(--navy)}
+.hours{list-style:none;margin-top:8px;display:grid;gap:4px}
+.hours li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed #f5b6d4;padding-bottom:4px}
+.hours li:last-child{border:none}
+.store-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto}
+.store-actions .btn{min-height:48px;padding:0 10px;font-size:.95rem}
+.new-flag{display:inline-block;background:var(--pink);color:#fff;font-size:.7rem;font-weight:800;padding:3px 9px;border-radius:999px;margin-left:8px;vertical-align:middle;letter-spacing:.06em}
+@media (min-width:720px){.stores{grid-template-columns:1fr 1fr}}
+@media (min-width:1080px){.stores{grid-template-columns:repeat(3,1fr)}}
+
+/* ---------- Policies ---------- */
+.pol-grid{display:grid;gap:16px}
+.pol{background:#fff;border-radius:var(--r-md);padding:24px 22px;box-shadow:var(--shadow);border-top:6px solid var(--blue)}
+.pol.sale{border-top-color:var(--yellow)}
+.pol.lay{border-top-color:var(--pink);background:linear-gradient(180deg,var(--pink-soft) 0%,#fff 45%)}
+.pol.pay{border-top-color:var(--navy)}
+.pol h3{font-size:1.3rem;margin-bottom:6px}
+.pol p{color:var(--muted);font-size:.95rem;margin-bottom:12px}
+.pol ul{list-style:none;display:grid;gap:8px}
+.pol li{display:flex;gap:10px;font-size:.95rem;line-height:1.45}
+.pol li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue);margin-top:7px;flex-shrink:0}
+.pol.sale li::before{background:var(--yellow)}
+.pol.lay li::before{background:var(--pink)}
+.pol.pay li::before{background:var(--navy)}
+.pol-note{text-align:center;margin-top:22px;font-weight:800;color:var(--navy)}
+@media (min-width:720px){.pol-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:1080px){.pol-grid{grid-template-columns:repeat(4,1fr)}}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--blue);color:#fff;border-radius:var(--r-lg);padding:40px 26px;text-align:center}
+.contact h2{color:#fff;font-size:clamp(2rem,6.5vw,2.6rem)}
+.contact p{opacity:.92;max-width:560px;margin:12px auto 26px;font-size:1.05rem}
+.contact-ctas{display:flex;flex-direction:column;gap:12px;justify-content:center}
+@media (min-width:640px){.contact-ctas{flex-direction:row}}
+
+/* ---------- Footer ---------- */
+footer{background:var(--navy);color:#C9D1EE;padding:50px 0 100px;margin-top:64px}
+.f-grid{display:grid;gap:28px}
+footer .logo-text{color:#fff}
+.f-lines{margin-top:14px;font-weight:700;font-size:.92rem;line-height:1.9}
+.f-lines span{color:var(--yellow);margin:0 6px}
+.f-links{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px}
+.f-links a{text-decoration:none;font-weight:700}
+.f-links a:hover{color:var(--yellow)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:20px;font-size:.84rem;opacity:.75}
+@media (min-width:860px){.f-grid{grid-template-columns:1.3fr 1fr;align-items:end}.f-links{justify-content:flex-end}footer{padding-bottom:50px}}
+
+/* ---------- Mobile sticky action bar ---------- */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(14,26,61,.08);display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+.mbar .btn{min-height:50px;font-size:1rem}
+@media (min-width:860px){.mbar{display:none}}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+
+<!-- Local SEO: helps Google show the stores in "kids clothing near me" searches -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"ClothingStore","name":"Kids World — Greenbriar Mall","telephone":"+1-404-494-3844","address":{"@type":"PostalAddress","streetAddress":"2841 Greenbriar Parkway SW","addressLocality":"Atlanta","addressRegion":"GA","postalCode":"30331","addressCountry":"US"}},
+{"@type":"ClothingStore","name":"A to Z Kids — South DeKalb Mall","telephone":"+1-404-243-8690","address":{"@type":"PostalAddress","streetAddress":"2801 Candler Road","addressLocality":"Decatur","addressRegion":"GA","postalCode":"30034","addressCountry":"US"}},
+{"@type":"ClothingStore","name":"Kids World — Stonecrest Marketplace","telephone":"+1-678-526-2133","address":{"@type":"PostalAddress","streetAddress":"8120 Mall Parkway","addressLocality":"Lithonia","addressRegion":"GA","postalCode":"30038","addressCountry":"US"}},
+{"@type":"ClothingStore","name":"Kids World — Southlake Mall","telephone":"+1-770-960-1655","address":{"@type":"PostalAddress","streetAddress":"1000 Southlake Mall","addressLocality":"Morrow","addressRegion":"GA","postalCode":"30260","addressCountry":"US"}},
+{"@type":"ClothingStore","name":"Kids World — Arbor Place Mall","telephone":"+1-770-489-1731","address":{"@type":"PostalAddress","streetAddress":"6700 Douglas Boulevard","addressLocality":"Douglasville","addressRegion":"GA","postalCode":"30135","addressCountry":"US"}},
+{"@type":"ClothingStore","name":"Kids World — Sugarloaf Mills","telephone":"+1-678-847-0007","address":{"@type":"PostalAddress","streetAddress":"5900 Sugarloaf Parkway, Suite 608","addressLocality":"Lawrenceville","addressRegion":"GA","postalCode":"30043","addressCountry":"US"},
+ "openingHoursSpecification":[
+  {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"10:00","closes":"20:00"},
+  {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"10:00","closes":"21:00"},
+  {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"19:00"}]}
+]}
+</script>
+</head>
+
+<body>
+<!-- ================================================================
+     LIENS À BRANCHER (comme pour CITADELLE : remplace "#" par ton lien Typeform)
+     - id="club-link"     → formulaire d'inscription Kids World Club
+     - id="contact-link"  → formulaire de contact / demande de disponibilité
+     - Privacy Policy / Terms → pages à créer
+     IMAGES : crée un dossier "images" dans le repo et ajoute :
+       storefront.jpg, bag.jpg, girls.jpg, boys.jpg, baby.jpg, uniforms.jpg, accessories.jpg
+     (si une image manque, le design coloré s'affiche à la place)
+     ================================================================ -->
+
+<div class="topbar">New arrivals, school uniforms, and family savings are <span>waiting in store.</span></div>
+
+<header id="top">
+  <div class="wrap nav-row">
+    <a href="#top" class="logo" aria-label="Kids World home">
+      <span>
+        <span class="logo-text"><b>KIDS</b> W<svg class="ball" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1F4FD8"/><path d="M12 1v22M1 12h22M5 4.5c3 4 3 11 0 15M19 4.5c-3 4-3 11 0 15" stroke="#fff" stroke-width="1.6" fill="none"/></svg>RLD</span>
+        <span class="logo-sub">&amp; A to Z Kids</span>
+      </span>
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mainnav"><span></span></button>
+    <nav class="main" id="mainnav" aria-label="Main">
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#girls">Girls</a></li>
+        <li><a href="#boys">Boys</a></li>
+        <li><a href="#baby">Baby</a></li>
+        <li><a href="#school-uniforms">School Uniforms</a></li>
+        <li><a href="#new-arrivals">New Arrivals</a></li>
+        <li><a href="#promotions" class="hl">Promotions</a></li>
+        <li><a href="#stores">Find a Store</a></li>
+        <li><a href="#club" class="club">Kids World Club</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill">★ 6 stores across metro Atlanta</span>
+      <h1>Big Style for <em>Little Stars.</em></h1>
+      <p class="lead">Discover children's clothing, baby essentials, school uniforms, accessories, and more at Kids World.</p>
+      <div class="hero-ctas">
+        <a href="#stores" class="btn btn-pink">Find a Store</a>
+        <a href="#new-arrivals" class="btn btn-outline">Explore New Arrivals</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo">
+        <div class="ph"><div><strong>Kids World</strong><small>Your neighborhood kids' store</small></div></div>
+        <img src="images/storefront.jpg" alt="Kids World storefront" onerror="this.remove()">
+      </div>
+      <div class="badge-float bf-2">
+        <span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7zM9 7V5a3 3 0 016 0v2" stroke="#FF3E9A" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg></span>
+        New arrivals in store
+      </div>
+      <div class="badge-float bf-1">
+        <span class="dot"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9l8-5 8 5-8 5-8-5zm3 2v5c3 2 7 2 10 0v-5" stroke="#0E1A3D" stroke-width="2.2" fill="none" stroke-linejoin="round"/></svg></span>
+        School uniforms ready
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORIES ============ -->
+<section id="categories">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Shop by Category</span>
+      <h2>Something for every little star</h2>
+      <p>Browse our departments, then visit your nearest store to see the full selection.</p>
+    </div>
+    <div class="cats">
+      <a href="#stores" id="girls" class="cat c-girls reveal">
+        <div class="cat-media">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M24 6c2 4 14 4 16 0l6 4-4 12 10 34H12l10-34-4-12z" fill="#fff"/><circle cx="32" cy="16" r="2.5" fill="#FF3E9A"/></svg>
+          <img src="images/girls.jpg" alt="Girls' clothing" onerror="this.remove()">
+        </div>
+        <div class="cat-body"><h3>Girls <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="#1F4FD8" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span></h3><p>Fun, colorful styles for every moment.</p></div>
+      </a>
+      <a href="#stores" id="boys" class="cat c-boys reveal">
+        <div class="cat-media">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M22 6h20l14 10-6 10-6-4v36H20V22l-6 4-6-10z" fill="#fff"/><path d="M26 6c1 5 11 5 12 0" stroke="#1F4FD8" stroke-width="2.5" fill="none"/></svg>
+          <img src="images/boys.jpg" alt="Boys' clothing" onerror="this.remove()">
+        </div>
+        <div class="cat-body"><h3>Boys <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="#1F4FD8" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span></h3><p>Everyday looks for play, school, and more.</p></div>
+      </a>
+      <a href="#stores" id="baby" class="cat c-baby reveal">
+        <div class="cat-media">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M24 6h16l12 10-6 8-4-3v15c0 6 6 8 6 14v6H40l-8-8-8 8h-8v-6c0-6 6-8 6-14V21l-4 3-6-8z" fill="#fff"/><circle cx="32" cy="30" r="2.5" fill="#FFC93C"/><circle cx="32" cy="38" r="2.5" fill="#FFC93C"/></svg>
+          <img src="images/baby.jpg" alt="Baby essentials" onerror="this.remove()">
+        </div>
+        <div class="cat-body"><h3>Baby <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="#1F4FD8" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span></h3><p>Comfort, essentials, and adorable first looks.</p></div>
+      </a>
+      <a href="#stores" id="school-uniforms" class="cat c-school reveal">
+        <div class="cat-media">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="12" y="18" width="40" height="40" rx="10" fill="#fff"/><path d="M22 18v-4a10 10 0 0120 0v4" stroke="#fff" stroke-width="4" fill="none"/><rect x="20" y="32" width="24" height="12" rx="4" fill="#FFC93C"/></svg>
+          <img src="images/uniforms.jpg" alt="School uniforms" onerror="this.remove()">
+        </div>
+        <div class="cat-body"><h3>School Uniforms <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="#1F4FD8" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span></h3><p>Everything children need to get ready for school.</p></div>
+      </a>
+      <a href="#stores" id="accessories" class="cat c-acc reveal">
+        <div class="cat-media">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 30L10 18v28l22-12 22 12V18z" fill="#fff"/><circle cx="32" cy="32" r="6" fill="#FFC93C"/></svg>
+          <img src="images/accessories.jpg" alt="Kids' accessories" onerror="this.remove()">
+        </div>
+        <div class="cat-body"><h3>Accessories <span class="arr"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="#1F4FD8" stroke-width="3" fill="none" stroke-linecap="round"/></svg></span></h3><p>The finishing touches for growing style.</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEW ARRIVALS / PROMOTIONS ============ -->
+<section id="new-arrivals" style="padding-top:8px">
+  <div class="wrap">
+    <div class="promo reveal" id="promotions">
+      <div>
+        <span class="sale-tag">In store now</span>
+        <h2>New Arrivals and Great Value</h2>
+        <p>Discover fresh styles, school essentials, and family-friendly prices at your nearest Kids World location.</p>
+        <a href="#stores" class="btn btn-yellow">View Promotions</a>
+      </div>
+      <div class="promo-chips">
+        <span class="chip y">New Arrivals</span>
+        <span class="chip">School Essentials</span>
+        <span class="chip">Baby Must-Haves</span>
+        <span class="chip">Family Savings</span>
+        <span class="chip">Accessories</span>
+        <span class="chip">Juvenile Furniture</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AVAILABILITY + CLUB ============ -->
+<section style="padding-top:0">
+  <div class="wrap duo">
+    <div class="card card-avail reveal" id="availability">
+      <div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="#fff" stroke-width="2.4" fill="none"/><path d="M16 16l4.5 4.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg></div>
+      <h2>Need a Size or Item?</h2>
+      <p>Contact your nearest Kids World store to check availability or reserve selected items.</p>
+      <a href="#stores" class="btn btn-blue">Check Availability</a>
+      <p style="margin:18px 0 0;font-size:.95rem">Want us to hold an item? Ask about our <a href="#policies" style="color:var(--blue);font-weight:800">Layaway Plan</a>.</p>
+    </div>
+    <div class="card card-club reveal" id="club">
+      <div class="ico"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.6 1.3 6.5L12 17.2l-5.9 3.2 1.3-6.5L2.5 9.3l6.6-.8z" fill="#FFC93C"/></svg></div>
+      <h2>Join Kids World Club</h2>
+      <p>Join our family and receive exclusive offers, new-arrival alerts, school-uniform updates, and family savings.</p>
+      <ul class="perks">
+        <li>Exclusive member offers</li>
+        <li>New-arrival alerts</li>
+        <li>School-uniform updates</li>
+      </ul>
+      <!-- ⬇ Remplace "#" par le lien Typeform du Club -->
+      <a href="#" id="club-link" class="btn btn-white" target="_blank" rel="noopener">Join the Club</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORES ============ -->
+<section id="stores" class="stores-bg">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Find a Store</span>
+      <h2>Visit us across metro Atlanta</h2>
+      <p>Tap to call a store or get directions. Call ahead to ask about sizes and selected items.</p>
+    </div>
+    <div class="stores">
+
+      <article class="store feature reveal">
+        <span class="store-brand">Kids World</span>
+        <h3>Sugarloaf Mills <span class="new-flag">VISIT US</span></h3>
+        <div class="store-note">
+          Visit our Kids World location at Sugarloaf Mills in Lawrenceville.
+          <ul class="hours">
+            <li><strong>Mon – Thu</strong><span>10:00 AM – 8:00 PM</span></li>
+            <li><strong>Fri – Sat</strong><span>10:00 AM – 9:00 PM</span></li>
+            <li><strong>Sunday</strong><span>11:00 AM – 7:00 PM</span></li>
+          </ul>
+        </div>
+        <address><svg class="row-ic" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" stroke="#1F4FD8" stroke-width="2" fill="none"/><circle cx="12" cy="10" r="2.5" fill="#1F4FD8"/></svg>5900 Sugarloaf Parkway, Suite 608<br>Lawrenceville, GA 30043</address>
+        <a class="tel" href="tel:+16788470007"><svg class="row-ic" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z" stroke="#FF3E9A" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>678-847-0007</a>
+        <div class="store-actions">
+          <a class="btn btn-pink" href="tel:+16788470007">Call</a>
+          <a class="btn btn-blue" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kids+World+5900+Sugarloaf+Parkway+Suite+608+Lawrenceville+GA+30043">Directions</a>
+        </div>
+      </article>
+
+      <article class="store reveal">
+        <span class="store-brand">Kids World</span>
+        <h3>Greenbriar Mall</h3>
+        <address><svg class="row-ic" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" stroke="#1F4FD8" stroke-width="2" fill="none"/><circle cx="12" cy="10" r="2.5" fill="#1F4FD8"/></svg>2841 Greenbriar Parkway SW<br>Atlanta, GA 30331</address>
+        <a class="tel" href="tel:+14044943844"><svg class="row-ic" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z" stroke="#FF3E9A" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>404-494-3844</a>
+        <div class="store-actions">
+          <a class="btn btn-pink" href="tel:+14044943844">Call</a>
+          <a class="btn btn-blue" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kids+World+2841+Greenbriar+Parkway+SW+Atlanta+GA+30331">Directions</a>
+        </div>
+      </article>
+
+      <article class="store reveal">
+        <span class="store-brand az">A to Z Kids</span>
+        <h3>South DeKalb Mall</h3>
+        <address><svg class="row-ic" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" stroke="#1F4FD8" stroke-width="2" fill="none"/><circle cx="12" cy="10" r="2.5" fill="#1F4FD8"/></svg>2801 Candler Road<br>Decatur, GA 30034</address>
+        <a class="tel" href="tel:+14042438690"><svg class="row-ic" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z" stroke="#FF3E9A" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>404-243-8690</a>
+        <div class="store-actions">
+          <a class="btn btn-pink" href="tel:+14042438690">Call</a>
+          <a class="btn btn-blue" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=A+to+Z+Kids+2801+Candler+Road+Decatur+GA+30034">Directions</a>
+        </div>
+      </article>
+
+      <article class="store reveal">
+        <span class="store-brand">Kids World</span>
+        <h3>Stonecrest Marketplace</h3>
+        <address><svg class="row-ic" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" stroke="#1F4FD8" stroke-width="2" fill="none"/><circle cx="12" cy="10" r="2.5" fill="#1F4FD8"/></svg>8120 Mall Parkway<br>Lithonia, GA 30038</address>
+        <a class="tel" href="tel:+16785262133"><svg class="row-ic" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z" stroke="#FF3E9A" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>678-526-2133</a>
+        <div class="store-actions">
+          <a class="btn btn-pink" href="tel:+16785262133">Call</a>
+          <a class="btn btn-blue" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kids+World+8120+Mall+Parkway+Lithonia+GA+30038">Directions</a>
+        </div>
+      </article>
+
+      <article class="store reveal">
+        <span class="store-brand">Kids World</span>
+        <h3>Southlake Mall</h3>
+        <address><svg class="row-ic" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" stroke="#1F4FD8" stroke-width="2" fill="none"/><circle cx="12" cy="10" r="2.5" fill="#1F4FD8"/></svg>1000 Southlake Mall<br>Morrow, GA 30260</address>
+        <a class="tel" href="tel:+17709601655"><svg class="row-ic" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z" stroke="#FF3E9A" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>770-960-1655</a>
+        <div class="store-actions">
+          <a class="btn btn-pink" href="tel:+17709601655">Call</a>
+          <a class="btn btn-blue" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kids+World+1000+Southlake+Mall+Morrow+GA+30260">Directions</a>
+        </div>
+      </article>
+
+      <article class="store reveal">
+        <span class="store-brand">Kids World</span>
+        <h3>Arbor Place Mall</h3>
+        <address><svg class="row-ic" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" stroke="#1F4FD8" stroke-width="2" fill="none"/><circle cx="12" cy="10" r="2.5" fill="#1F4FD8"/></svg>6700 Douglas Boulevard<br>Douglasville, GA 30135</address>
+        <a class="tel" href="tel:+17704891731"><svg class="row-ic" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z" stroke="#FF3E9A" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>770-489-1731</a>
+        <div class="store-actions">
+          <a class="btn btn-pink" href="tel:+17704891731">Call</a>
+          <a class="btn btn-blue" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Kids+World+6700+Douglas+Boulevard+Douglasville+GA+30135">Directions</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORE POLICIES (confirmées le 4 oct. 2026) ============ -->
+<section id="policies">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Store Policies</span>
+      <h2>Shop with confidence</h2>
+      <p>These policies apply in our stores. Please keep your receipt.</p>
+    </div>
+    <div class="pol-grid">
+      <article class="pol reveal">
+        <h3>Returns &amp; Exchanges</h3>
+        <p>Not completely satisfied? Bring the item back with your receipt.</p>
+        <ul>
+          <li>Exchanges within 30 days with receipt</li>
+          <li>Refunds within 7 days with receipt</li>
+          <li>No refunds or exchanges without a receipt</li>
+        </ul>
+      </article>
+      <article class="pol sale reveal">
+        <h3>Sale Items</h3>
+        <p>Sale items can be exchanged, but not refunded.</p>
+        <ul>
+          <li>Exchange only, within 30 days with receipt</li>
+          <li>No refunds on sale items</li>
+        </ul>
+      </article>
+      <article class="pol lay reveal">
+        <h3>Layaway Plan</h3>
+        <p>We gladly hold your selection for 30 days.</p>
+        <ul>
+          <li>Deposit of at least 25% of the layaway total (minimum $10)</li>
+          <li>Complete your payments within 30 days</li>
+          <li>$5 layaway fee · $8 cancellation fee</li>
+          <li>Sale and clearance items not eligible</li>
+          <li>No cash refund — store credit only</li>
+        </ul>
+      </article>
+      <article class="pol pay reveal">
+        <h3>Payment</h3>
+        <p>Cash and credit cards accepted.</p>
+        <ul>
+          <li>Picture ID required for all credit card purchases</li>
+          <li>Personal checks not accepted</li>
+        </ul>
+      </article>
+    </div>
+    <p class="pol-note reveal">Questions about a purchase? Call your store, receipt in hand.</p>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="contact reveal">
+      <h2>We're here to help</h2>
+      <p>Questions about sizes, school uniforms, or selected items? Call your nearest Kids World store, or send us a message.</p>
+      <div class="contact-ctas">
+        <a href="#stores" class="btn btn-yellow">Call a Store</a>
+        <!-- ⬇ Remplace "#" par le lien du formulaire de contact -->
+        <a href="#" id="contact-link" class="btn btn-outline" target="_blank" rel="noopener">Send a Message</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="logo">
+          <span class="logo-text"><b>KIDS</b> W<svg class="ball" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1F4FD8"/><path d="M12 1v22M1 12h22M5 4.5c3 4 3 11 0 15M19 4.5c-3 4-3 11 0 15" stroke="#fff" stroke-width="1.6" fill="none"/></svg>RLD</span>
+        </a>
+        <p class="f-lines">Layette<span>|</span>Children's Clothing<span>|</span>Baby Essentials<span>|</span>School Uniforms<span>|</span>Juvenile Furniture</p>
+      </div>
+      <ul class="f-links">
+        <li><a href="#stores">Find a Store</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#club">Kids World Club</a></li>
+        <li><a href="#policies">Store Policies</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms and Conditions</a></li>
+      </ul>
+    </div>
+    <div class="f-bottom">© <span id="yr"></span> Kids World &amp; A to Z Kids. Big Style for Little Stars.</div>
+  </div>
+</footer>
+
+<!-- Mobile quick actions -->
+<div class="mbar">
+  <a href="#stores" class="btn btn-blue">Find a Store</a>
+  <a href="#club" class="btn btn-pink">Join the Club</a>
+</div>
+
+<script>
+  // Menu mobile
+  const body=document.body, btn=document.querySelector('.menu-btn');
+  btn.addEventListener('click',()=>{const o=body.classList.toggle('menu-open');btn.setAttribute('aria-expanded',o)});
+  document.querySelectorAll('nav.main a').forEach(a=>a.addEventListener('click',()=>{body.classList.remove('menu-open');btn.setAttribute('aria-expanded',false)}));
+  // Apparition douce au scroll
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // Année du footer
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
